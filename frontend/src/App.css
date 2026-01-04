@@ -1,0 +1,128 @@
+/* Root container - full screen with gradient background */
+#root {
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* vibrant gradient */
+  color: #fff;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Header */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* stronger shadow for visibility */
+  text-align: center;
+}
+
+/* Jokes container - responsive grid */
+.jokes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Individual card - glass effect enhanced */
+.card {
+  background: rgba(255, 255, 255, 0.15); /* slightly more opaque for readability */
+  border-radius: 25px;
+  padding: 2rem;
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* stronger border for definition */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* deeper shadow */
+  transition: transform 0.4s, box-shadow 0.4s, background 0.3s;
+  cursor: default;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.25); /* subtle glow on hover */
+}
+
+/* Joke setup */
+.card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Joke punchline */
+.card p {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo animations if used */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Footer or links */
+.read-the-docs {
+  color: #ffffffcc;
+  font-size: 0.95rem;
+  margin-top: 3rem;
+  display: block;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.read-the-docs:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive typography */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .card h2 {
+    font-size: 1.4rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+}
