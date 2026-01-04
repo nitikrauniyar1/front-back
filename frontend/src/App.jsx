@@ -23,9 +23,6 @@ function App() {
           </div>
         ))}
       </div>
-      <a className="read-the-docs" href="#">
-        More jokes
-      </a>
     </div>
   );
 }
